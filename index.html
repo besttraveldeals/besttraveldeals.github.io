@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->
@@ -90,90 +89,56 @@
                             }
                         </style>
                        
-                                        
-<!DOCTYPE html>
-<html>
-<head>
-  <title>APPLICANTS OF RAJ SINGH</title>
-<link rel="stylesheet" type="text/css" href="stylee.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+                                        <script>
+                                           var today = new Date().toISOString().split('T')[0];
+                                            document.getElementsByName("date_from")[0].setAttribute('min', today);
+                                        </script> -->
+                            <!--        <fieldset class="rooms">
+                                        <div class="values1">
+                                            <select class="full-width" name="wdugo">
+                                                    <option value="02 Nights / 03 Days ">02 Nights / 03 Days </option>
+                                            <option value="03 Nights / 04 Days ">03 Nights / 04 Days </option>
+                                            <option value="04 Nights / 05 Days ">04 Nights / 05 Days </option>
+                                            
+                                            <option value="05 Nights / 06 Days ">05 Nights / 06 Days </option>
+                                            <option value="06 Nights / 07 Days ">06 Nights / 07 Days </option>
+                                            <option value="07 Nights / 08 Days ">07 Nights / 08 Days </option>
+                                            <option value="more than 8 days">more than 8 days</option>
+                                            
+                                            </select>
+                                        </div>
+                                    </fieldset> -->
 
-  .container{
-    width:480px;
-    height:860px;
-    align-self: center;
-    background: grey;
-    border-color: black;
-    border: double;
-    vertical-align: center;   
-  }
-  form{
-    width:390px;
-    height:800px;
-    background: silver;
-    vertical-align: center;
-  }
-</style>
 
-</head>
-<body>  
-      <div class="container">
-        <form action="POST" name="google-sheet">
-<h3 class="head">Tourist Contact Form </h3>
-<label>Name</label>
-<input type="text" class="input" placeholder="Type Your Name Here" name="Name">
-<label>E-Mail</label>
-<input type="email" class="input" placeholder="Type Your Email Here" name="E-Mail">
-<label>Number</label>
-<input type="text" class="input" placeholder="Type Your Number Here" name="Number">
-<select class="select" name="Intrested In">
-<option class="select">Tour Name</option>
-<option>MANALI BEST OFFER</option>
-<option>MANALI VOLVO TOUR PACKAGE</option>
-<option>SHIMLA VOLVO TOUR PACKAGE</option>
-<option>MANALI HONEYMOON VOLVO TOUR PACKAGE</option>
-<option>SHIMLA MANALI VOLVO TOUR PACKAGE</option>
-<option>SHIMLA MANALI HONEYMOON VOLVO TOUR</option>
-<option>HIMACHAL SPECIAL TOUR</option>
-<option>HIMACHAL SPECIAL TOUR</option>
-<option>CUSTOMIZE YOUR PACKAGES</option>
-</select>   
-<select class="select" name="Adult">
-<option>Adults</option>
-<option class="input">1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>More then 4</option>
-</select>
-<select class="select" name="Kids">
-<option>Kids</option>
-<option class="input">Only Adults</option>
-<option class="input">1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>More then 4</option>
-</select>
-<textarea class="input" rows="2" placeholder="How We can Help You" name="query"></textarea>
-<button  type="submit" class="Submit">Submit</button>
-<button type="reset" class="reset">Reset</button>
-</form>
-</div>
-<script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwZs4Z_ILqgpzshyd7oTSGsJRbfrjITXKPflFQqtQU1wZQ6pBEsMqDQe5lfGhpppJ4-/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Your Contact Details are Submitted succesfully!!!!!"))
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
-</body>
-</html>
+                            </select>
+                    </div>
+                    </fieldset>
+
+
+
+                    <fieldset </select>
+                </div>
+                </fieldset>
+
+                <div class="clearfix"></div>
+                <fieldset>
+
+                </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!--</div>                      
+                    </div>-->
+        </div>
+        </div>
+
+
+
+
+
+        </div>
+        </div>
     </header>
 
     <!--./ Main Slider End -->
