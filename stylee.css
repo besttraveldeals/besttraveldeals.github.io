@@ -1,0 +1,95 @@
+h5
+{
+	outline: solid;
+	font: sans-serif;
+	font-weight: bold;
+	background: grey;
+	font-size: 24px;	
+	align-content: center
+	padding: 6px;
+	outline: inset;
+	cursor: pointer;
+	border-radius: 00px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	
+}
+.containeer
+{
+	margin-top: 50px;
+	border-color: black;
+	height: auto;
+	width: auto;
+	background:transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: center;
+	align-self: center;
+
+}
+
+form
+{
+	border: double;
+	font-family: cursive;
+	padding: 10px;
+	background: transparent;
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	height: auto;
+    align-self: center;
+    vertical-align: center;
+}
+form button
+{
+	flex-direction: row;
+	width: 50%;
+	font-family: cursive;
+	padding: 0px;
+	background: green;	
+	font-size: 18px;
+	outline: none;
+	cursor: pointer;
+	border-radius: 10px;
+	margin-bottom: 3px;
+	 margin-top: 5px;
+	 margin-left: -2px;
+}
+
+form .reset
+{
+	margin-left:52%;
+	margin-top: -7%;
+	background: red;
+}
+form .input
+{
+	outline: inset;
+	cursor: text;
+	border-radius: 00px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+select
+{
+	outline: inset;
+	cursor: pointer;
+	border-radius: 00px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: bold;
+
+}
+form label
+{
+	outline: solid;
+	cursor: pointer;
+	border-radius: 00px;
+	margin-bottom: 3px;
+	margin-top: 4px;
+}

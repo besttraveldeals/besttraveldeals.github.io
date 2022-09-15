@@ -18,23 +18,13 @@
     <link href="./style.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-
 </head>
-
 <body>
-
-    <div class="navbar navbar-default navbar-fixed-top menu-back">
+<div class="navbar navbar-default navbar-fixed-top menu-back">
         <div class="container">
             <div class="navbar-header col-sm-5 col-xs-12">
-
-                <a class="navbar-brand" href="https://besttravelersdetails.w3spaces.com/">
-                    <img src="./logo.png" class="navbar-brand-logo " alt="">
+ <a class="navbar-brand" href="https://besttraveldeals.github.io/">
+<img src="./logo.png" class="navbar-brand-logo " alt="">
                 </a>
             </div>
             <div class="col-sm-7 col-xs-12">
@@ -71,14 +61,16 @@
                                 <h3 class="b4">For Best Deals Call-
                                     <a style="color:red;" href="tel:+91-8817369119">+91-8817369119</a>
                                 </h3>
+                                <img src="gif.gif">
 
-
-
-                            </div>
+                           </div>
                         </div>
 
 
                         <style>
+                            .tx1{
+                                width: 65%;
+                            }
                             .banner-form p {
                                 font-size: 16px !important;
                                 padding-top: 14px !important;
@@ -89,26 +81,89 @@
                             }
                         </style>
                        
-                                        <script>
-                                           var today = new Date().toISOString().split('T')[0];
-                                            document.getElementsByName("date_from")[0].setAttribute('min', today);
-                                        </script> -->
-                            <!--        <fieldset class="rooms">
-                                        <div class="values1">
-                                            <select class="full-width" name="wdugo">
-                                                    <option value="02 Nights / 03 Days ">02 Nights / 03 Days </option>
-                                            <option value="03 Nights / 04 Days ">03 Nights / 04 Days </option>
-                                            <option value="04 Nights / 05 Days ">04 Nights / 05 Days </option>
-                                            
-                                            <option value="05 Nights / 06 Days ">05 Nights / 06 Days </option>
-                                            <option value="06 Nights / 07 Days ">06 Nights / 07 Days </option>
-                                            <option value="07 Nights / 08 Days ">07 Nights / 08 Days </option>
-                                            <option value="more than 8 days">more than 8 days</option>
-                                            
-                                            </select>
-                                        </div>
-                                    </fieldset> -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTD APPLICATION</title>
+<link rel="stylesheet" type="text/css" href="stylee.css">
+</head>
+<body>  
+      <div class="container">
+        <form action="POST" name="google-sheet">
+<h5 class="head" align="center" >Tourist Contact Form </h5>
+<input type="text" class="input" placeholder="Type Your Name Here" name="Name">
+<input type="email" class="input" placeholder="Type Your Email Here" name="E-Mail">
+<input type="text" class="input" placeholder="Type Your Number Here" name="Number">
+<select class="select" name="Intrested In">
+<option class="select">Tour Name</option>
+<option>MANALI BEST OFFER</option>
+<option>MANALI VOLVO TOUR PACKAGE</option>
+<option>SHIMLA VOLVO TOUR PACKAGE</option>
+<option>MANALI HONEYMOON VOLVO TOUR PACKAGE</option>
+<option>SHIMLA MANALI VOLVO TOUR PACKAGE</option>
+<option>SHIMLA MANALI HONEYMOON VOLVO TOUR</option>
+<option>HIMACHAL SPECIAL TOUR</option>
+<option>HIMACHAL SPECIAL TOUR</option>
+<option>CUSTOMIZE YOUR PACKAGES</option>
+</select>   
+<select class="select" name="Adult">
+<option>Adults</option>
+<option class="input">1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>More then 4</option>
+</select>
+<select class="select" name="Kids">
+<option>Kids</option>
+<option class="input">Only Adults</option>
+<option class="input">1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>More then 4</option>
+</select>
+<textarea class="input" rows="2" placeholder="How We can Help You" name="query"></textarea>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styleee.css">
+</head>
+<body>
+<button  type="submit" class="Submit"
+>Submit</button>
+<button type="reset" class="reset">Reset</button>
+</div>
+<div class="popup" id="popup">
+<img src="tick.png">
+<h2>Thank You!</h2>
+<p>Your details has been successfully submitted. Thanks!</p>
+<button type="button" onclick="closePopup()">OK</button>
+</div>
+<script>
+let popup = document.getElementById("popup");
+function openPopup(){ popup.classList.add("open-popup");
+}
+function closePopup() {popup.classList.remove("open-popup");
+}
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwZs4Z_ILqgpzshyd7oTSGsJRbfrjITXKPflFQqtQU1wZQ6pBEsMqDQe5lfGhpppJ4-/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => openPopup())
+                .catch(error => console.error('Error!', error.message))
 
+            })
+</script>
+</form>
+</body>
+</html>
+</body>
+</html>
 
                             </select>
                     </div>
@@ -187,7 +242,7 @@
                                         <p>* One Half Day Manali Local Sightseeing</p>
                                         <p>* One Full Day Snow Point / Solang Valley Sightseeing</p>
                                         <p>* No Hidden Cost</p>
-                                        <a href="https://besttravelersdetails.w3spaces.com" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
+                                        <a href="https://besttraveldeals.github.io" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
                                     </div>
 
                                 </div>
@@ -233,7 +288,7 @@
                                         <p>* One Full Day Kullu – Manikaran Sightseeing</p>
                                         <p>* No Hidden Cost</p>
 
-                                        <a href="https://besttravelersdetails.w3spaces.com" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
+                                        <a href="https://besttraveldeals.github.io" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
                                     </div>
 
                                 </div>
@@ -275,7 +330,7 @@
                                         <p>* One Full Day Kufri Sightseeing by Individual Car</p>
                                         <p>* No Hidden Cost</p>
 
-                                        <a href="https://besttravelersdetails.w3spaces.com" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
+                                        <a href="https://besttraveldeals.github.io" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +382,7 @@
                                         <p>* One Full Day Kullu – Manikaran Sightseeing</p>
                                         <p>* No Hidden Cost</p>
 
-                                        <a href="https://besttravelersdetails.w3spaces.com" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
+                                        <a href="https://besttraveldeals.github.io" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
                                     </div>
                                 </div>
                             </div>
@@ -376,7 +431,7 @@
                                         <p>* One Full Day Kullu – Manikaran Sightseeing</p>
                                         <p>* No Hidden Cost</p>
 
-                                        <a href="https://besttravelersdetails.w3spaces.com" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
+                                        <a href="https://besttraveldeals.github.io" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
                                     </div>
                                 </div>
                             </div>
@@ -425,7 +480,7 @@
                                         <p>* Pick Up and Drop From Volvo Bus Stand to Hotel</p>
                                         <p>* No Hidden Cost</p>
 
-                                        <a href="https://besttravelersdetails.w3spaces.com" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
+                                        <a href="https://besttraveldeals.github.io" target="_blank" rel="noreferrer noopener" class="left-btn">SEND ENQUIRE</a>
                                     </div>
                                 </div>
                             </div>
@@ -445,9 +500,9 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./pic-1.jpg"
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./pic-1.jpg"
                             width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Shimla -
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Shimla -
                             Manali Tour Package By AC Car </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -464,7 +519,7 @@
                                 class="style9">Off Season Rs. 10,400/- &amp; On Season Rs. 12,500/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -472,9 +527,9 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./pic-2.jpg"
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./pic-2.jpg"
                             width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Shimla -
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Shimla -
                             Manali - Chandigarh By AC Car </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -491,7 +546,7 @@
                                 class="style9">Off Season Rs. 11,500/- &amp; On Season Rs. 14,900/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -499,9 +554,9 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img
+                    <a class="link" href="https://besttraveldeals.github.io"><img
                             src="./1488731549-student-group.jpg" width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Student
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Student
                             Group Package </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -518,7 +573,7 @@
                                 class="style9">Off Season Rs. 2,500/- &amp; On Season Rs. 4,000/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -526,9 +581,9 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img
+                    <a class="link" href="https://besttraveldeals.github.io"><img
                             src="./river-rafting-in-ladakh.jpg" width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Student
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Student
                             Group Package </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -545,7 +600,7 @@
                                 class="style9">Off Season Rs. 3,000/- &amp; On Season Rs. 4,500/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -553,7 +608,7 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./2.jpg" width="100%"></a>
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./2.jpg" width="100%"></a>
                     <div class="title-wrapper"><a
                             href="http://himachaltourpacks.com/rajasthan-heritage-classic-with-spiritual-tour.html"
                             class="title">Dharamshala Volvo Tour Packages </a></div>
@@ -572,7 +627,7 @@
                                 class="style9">Off Season Rs. 5,900/- &amp; On Season Rs. 6,800/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -580,8 +635,8 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./1.jpg" width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Dharamshala
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./1.jpg" width="100%"></a>
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Dharamshala
                             - Dalhousie Tour Package by Car </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -598,7 +653,7 @@
                                 class="style9">Off Season Rs. 10,999/- &amp; On Season Rs. 13,500/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -606,7 +661,7 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./old-manali-river.jpg"
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./old-manali-river.jpg"
                             width="100%"></a>
                     <div class="title-wrapper"><a
                             href="http://himachaltourpacks.com/royal-rajasthan-with-nepal-tour.html"
@@ -628,7 +683,7 @@
                                 21,999/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -636,8 +691,8 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./41.jpg" width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title"> Katra -
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./41.jpg" width="100%"></a>
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title"> Katra -
                             Dharamshala - Dalhousie Tour</a></div>
                 </div>
                 <div class="content-wrapper">
@@ -655,7 +710,7 @@
                                     23,999/- Per Person</span>
                             </span>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -663,9 +718,9 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./pic-5.jpg"
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./pic-5.jpg"
                             width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Delhi -
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Delhi -
                             Agra - Manali Volvo Tour Package </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -682,7 +737,7 @@
                                 class="style9">Off Season Rs. 16,999/- &amp; On Season Rs. 21,000 /- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -690,9 +745,9 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./har-ki-pauri.jpg"
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./har-ki-pauri.jpg"
                             width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Haridwar -
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Haridwar -
                             Rishikesh - Shimla - Kullu - Manali Tour Package by Car </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -709,7 +764,7 @@
                                 class="style9">Off Season Rs. 16,999/- &amp; On Season Rs. 20,999/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -717,8 +772,8 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./7.jpg" width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Manali -
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./7.jpg" width="100%"></a>
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Manali -
                             Katra ( Mata Vaishno Davi ) Tour Package </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -735,7 +790,7 @@
                                 class="style9">Off Season Rs. 6,900/- &amp; On Season Rs. 9,999/- Per Person</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -743,9 +798,9 @@
 
             <div class="tours-layout post-588 slzexploore_tour boxpackagedesign" style="width: 360px;">
                 <div class="image-wrapper">
-                    <a class="link" href="  https://besttravelersdetails.w3spaces.com/"><img src="./pic-7.jpg"
+                    <a class="link" href="https://besttraveldeals.github.io"><img src="./pic-7.jpg"
                             width="100%"></a>
-                    <div class="title-wrapper"><a href="  https://besttravelersdetails.w3spaces.com/" class="title">Delhi Agra
+                    <div class="title-wrapper"><a href="https://besttraveldeals.github.io" class="title">Delhi Agra
                             &amp; Jaipur Tour Package </a></div>
                 </div>
                 <div class="content-wrapper">
@@ -762,7 +817,7 @@
                                 class="style9">INR 16,999 /- PER PERSON</span>
                             <br>
                         </p>
-                        <div class="group-btn-tours"> &nbsp; <a href="  https://besttravelersdetails.w3spaces.com/"
+                        <div class="group-btn-tours"> &nbsp; <a href="https://besttraveldeals.github.io"
                                 class="left-btn" style="background-color:#008080;">SEND ENQUIRE</a></div>
                     </div>
                 </div>
@@ -773,20 +828,20 @@
     <div class="global-map-area section parallax" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="text-center">
-                <h1 class="p2 s8" style="color:#85144b; padding:0px 0 20px;">HIMACHAL SPECIAL TOUR</h1>
+               <h1 class="p2 s8" style="color:#85144b; padding:0px 0 20px;">HIMACHAL SPECIAL TOUR</h1>
             </div>
             <div class="col-sm-12">
 
                 <div class="col-md-3">
                     <article class="box">
                         <figure>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="hover-effect yellow"><img
+                            <a href="https://besttraveldeals.github.io" title="" class="hover-effect yellow"><img
                                     src="./pic-8.jpg"></a>
                         </figure>
                         <div class="details">
                             <h3 class="box-title">9 Days<br>
                                 Grand Himachal Tour Package</h3>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="button yellow">INR
+                            <a href="https://besttraveldeals.github.io" title="" class="button yellow">INR
                                 15,999</a>
                         </div>
                     </article>
@@ -795,13 +850,13 @@
                 <div class="col-md-3">
                     <article class="box">
                         <figure>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="hover-effect yellow"><img
+                            <a href="https://besttraveldeals.github.io" title="" class="hover-effect yellow"><img
                                     src="./pic-9.jpg"></a>
                         </figure>
                         <div class="details">
                             <h3 class="box-title">5 Days<br>
                                 Dharamshala Temple package</h3>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="button yellow">INR 6,000</a>
+                            <a href="https://besttraveldeals.github.io" title="" class="button yellow">INR 6,000</a>
                         </div>
                     </article>
                 </div>
@@ -809,13 +864,13 @@
                 <div class="col-md-3">
                     <article class="box">
                         <figure>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="hover-effect yellow"><img
+                            <a href="https://besttraveldeals.github.io" title="" class="hover-effect yellow"><img
                                     src="./pic-10.jpg"></a>
                         </figure>
                         <div class="details">
                             <h3 class="box-title">7 Days<br>
                                 Shimla - Manali Honeymoon Volvo Package </h3>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="button yellow"> INR
+                            <a href="https://besttraveldeals.github.io" title="" class="button yellow"> INR
                                 7,999</a>
                         </div>
                     </article>
@@ -824,13 +879,13 @@
                 <div class="col-md-3">
                     <article class="box">
                         <figure>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="hover-effect yellow"><img
+                            <a href="https://besttraveldeals.github.io" title="" class="hover-effect yellow"><img
                                     src="./pic-11.jpg"></a>
                         </figure>
                         <div class="details">
                             <h3 class="box-title">10 Days<br>
                                 Himachal with Golden Temple Tour</h3>
-                            <a href="  https://besttravelersdetails.w3spaces.com/" title="" class="button yellow">INR
+                            <a href="https://besttraveldeals.github.io" title="" class="button yellow">INR
                                 16,999</a>
                         </div>
                     </article>
@@ -1008,6 +1063,7 @@ jQuery(window).load(function(){        alert('dddd');
 
 
     </script>
+ 
 
     <div id="footser-end">
         <div class="container">
@@ -1015,24 +1071,32 @@ jQuery(window).load(function(){        alert('dddd');
             <div class="row">
                 <div class="col-lg-9 col-md-9">
                     <div class="col-lg-3 col-md-3">
-                        <b>Founder & CEO:- Brajmohan Vishwakarma   </b>
-                        <p>Student, Tourism Management, CVS, Delhi University</p>
+                        <p><b>Founder & CEO:</p>
+                        <p>Brajmohan Vishwakarma</b></p>
+                        <p>Student,</P>
+                        <p>Tourism Management,</p>
+                        <p>CVS, Delhi University</p>
                         <p>New Delhi -110017, India</p>
                         <p>+917898388621</p>
+
                     </div>
             
                     <div class="col-lg-3 col-md-3">
-                        <b>Co-Founder: Urvashi Arse</b>
-                        <p>Student History Hons., Satyawati </p>
-                        <p>Delhi University</p>
+                       <p> <b>Co-Founder :</p>
+                        <p>Urvashi Arse</b></p>
+                        <p>Student,</p>
+                        <p>History Hons.,</p>
+                        <p>Satyawati, Delhi University</p>
                         <p>New Delhi -110017, India</p>
                         <p>+918305643303</p>
                </div>
             
             <div class="col-lg-3 col-md-3">
-                        <b>Marketing Manager: Ajay Singh Maran   </b>
-                        <p>Student BA, PGDAV </p>
-                        <p>Delhi University</p>
+                        <p><b>Marketing Manager: </p>
+                            <p>Ajay Singh Maran</b></p>
+                        <p>Student,</p>
+                        <P>BA Program,</P>
+                        <p>PGDAV, Delhi University</p>
                         <p>New Delhi -110017, India</p>
                         <p>+919575353406</p>
                   </div>
@@ -1043,15 +1107,6 @@ jQuery(window).load(function(){        alert('dddd');
 
         </div>
     </div>
-    <!--./ footer-end End -->
-    <!--  Jquery Core Script -->
-
-    <!--jquery CDN-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-    <!--<script src="https://perfecttourplanner.com/travel/himachal-tour-package/assets/js/bootstrap.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
     <script src="./jquery-1.10.2.js.download"></script>
 
     <script src="./bootstrap.js.download"></script>
@@ -1157,5 +1212,8 @@ jQuery(window).load(function(){        alert('dddd');
         }
     </style>
 </body>
-
+</html>
+</body>
+</html>
+</body>
 </html>
