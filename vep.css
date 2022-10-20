@@ -1,0 +1,117 @@
+h3
+{
+	outline: solid;
+	font: sans-serif;
+	font-weight: bold;
+	background: grey;
+	font-size: 24px;	
+	align-content: center
+	padding: 6px;
+	outline: inset;
+	cursor: pointer;
+	border-radius: 00px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	
+}
+.container
+{
+	border-color: black;
+	height: auto;
+	width: auto;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: center;
+	align-self: center;
+
+}
+
+form
+{
+	border: double;
+	font-family: cursive;
+	padding: 20px;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	height: auto;
+    align-self: center;
+    vertical-align: center;
+}
+form button
+{
+	font-family: cursive;
+	padding: 10px;
+	background: green;	
+	font-size: 18px;
+	outline: none;
+	cursor: pointer;
+	border-radius: 10px;
+	margin-bottom: 3px;
+	 margin-top: 5px;
+}
+
+form .reset
+{
+	background: red;
+}
+form .input
+{
+	font-family: cursive;
+	padding: 6px;
+	background: white;	
+	font-size: 18px;
+	outline: inset;
+	cursor: pointer;
+	border-radius: 00px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-weight: bolder;
+}
+select
+{
+	font-weight: bold;
+	background: white;
+	font-family: cursive;
+	padding: 6px;	
+	font-size: 18px;
+	outline: inset;
+	cursor: pointer;
+	border-radius: 00px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	
+}
+form label
+{
+	font-weight: bold;
+font-family: cursive;
+	padding: 8px;	
+	font-size: 20px;
+	outline: solid;
+	cursor: pointer;
+	border-radius: 00px;
+	margin-bottom: 3px;
+	margin-top: 4px;
+	align-items: all;
+	display: table-header-group;
+	flex-direction:column;
+	background: white;
+}	
+      .required{
+            content: "*";
+            font-weight: bold;
+            color: red;
+}
