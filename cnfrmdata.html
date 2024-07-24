@@ -17,6 +17,14 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            height: 80px;
+            width: auto;
         }
         .header h1, .header p {
             margin: 0;
@@ -24,6 +32,13 @@
         }
         .header p {
             font-size: 0.9em;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .header a:hover {
+            text-decoration: underline;
         }
         .container {
             width: 100%;
@@ -35,6 +50,8 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            background-color: #fff;
+            color: #333;
         }
         th, td {
             border: 1px solid #ddd;
@@ -42,7 +59,11 @@
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #008CBA;
+            color: white;
+        }
+        td {
+            background-color: #f1f1f1;
         }
         button {
             background-color: #4CAF50;
@@ -74,11 +95,13 @@
 </head>
 <body>
     <div class="header">
+        <img src="logo.jpg" alt="Best Travel Deals Logo">
         <h1>BEST TRAVEL DEALS</h1>
         <p>Be Tourist.....</p>
         <p>A Venture of Do Agnihotra Daily UDYAM-MP-10-0064623</p>
         <p>3rd Floor, 383|B|, Chirag Delhi, New Delhi-110017</p>
-        <p>📞 8989114821; 🌐 <a href="https://besttraveldeals.github.io" style="color: #fff;">besttraveldeals.github.io</a></p>
+        <p>📞 8989114821 | 📧 <a href="mailto:besttraveld@gmail.com">besttraveld@gmail.com</a></p>
+        <p>📸 <a href="https://www.instagram.com/besttraveld" target="_blank">@besttraveld</a> | 🌐 <a href="https://besttraveldeals.github.io" target="_blank">besttraveldeals.github.io</a></p>
     </div>
     <div class="container">
         <table id="dataTable">
@@ -94,36 +117,18 @@
             </thead>
             <tbody>
                 <tr>
+                    <td><input type="text" name="name" required></td>
+                    <td><input type="text" name="gender" required></td>
+                    <td><input type="number" name="age" min="13" max="48" required></td>
+                    <td><input type="tel" name="mobile" pattern="[0-9]{10}" required></td>
                     <td>
-                        <label for="name1" class="sr-only">Name</label>
-                        <input type="text" name="name" id="name1" required>
-                        <div class="error-message" id="error-name1"></div>
-                    </td>
-                    <td>
-                        <label for="gender1" class="sr-only">Gender</label>
-                        <input type="text" name="gender" id="gender1" required>
-                        <div class="error-message" id="error-gender1"></div>
-                    </td>
-                    <td>
-                        <label for="age1" class="sr-only">Age</label>
-                        <input type="number" name="age" id="age1" min="0" required>
-                        <div class="error-message" id="error-age1"></div>
-                    </td>
-                    <td>
-                        <label for="mobile1" class="sr-only">Mobile No</label>
-                        <input type="tel" name="mobile" id="mobile1" pattern="[0-9]{10}" required>
-                        <div class="error-message" id="error-mobile1"></div>
-                    </td>
-                    <td>
-                        <label for="sharing1" class="sr-only">Sharing Option</label>
-                        <select name="sharing" id="sharing1" required>
+                        <select name="sharing" required>
                             <option value="quad">Quad</option>
                             <option value="triple">Triple</option>
                             <option value="double">Double</option>
                         </select>
-                        <div class="error-message" id="error-sharing1"></div>
                     </td>
-                    <td></td>
+                    <td><button onclick="removeRow(this)">Remove</button></td>
                 </tr>
             </tbody>
         </table>
@@ -132,42 +137,21 @@
     </div>
 
     <script>
-        let rowCount = 1;
-
         function addRow() {
-            rowCount++;
             const tableBody = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
             const newRow = tableBody.insertRow(-1);
 
             newRow.innerHTML = `
+                <td><input type="text" name="name" required></td>
+                <td><input type="text" name="gender" required></td>
+                <td><input type="number" name="age" min="13" max="48" required></td>
+                <td><input type="tel" name="mobile" pattern="[0-9]{10}" required></td>
                 <td>
-                    <label for="name${rowCount}" class="sr-only">Name</label>
-                    <input type="text" name="name" id="name${rowCount}" required>
-                    <div class="error-message" id="error-name${rowCount}"></div>
-                </td>
-                <td>
-                    <label for="gender${rowCount}" class="sr-only">Gender</label>
-                    <input type="text" name="gender" id="gender${rowCount}" required>
-                    <div class="error-message" id="error-gender${rowCount}"></div>
-                </td>
-                <td>
-                    <label for="age${rowCount}" class="sr-only">Age</label>
-                    <input type="number" name="age" id="age${rowCount}" min="0" required>
-                    <div class="error-message" id="error-age${rowCount}"></div>
-                </td>
-                <td>
-                    <label for="mobile${rowCount}" class="sr-only">Mobile No</label>
-                    <input type="tel" name="mobile" id="mobile${rowCount}" pattern="[0-9]{10}" required>
-                    <div class="error-message" id="error-mobile${rowCount}"></div>
-                </td>
-                <td>
-                    <label for="sharing${rowCount}" class="sr-only">Sharing Option</label>
-                    <select name="sharing" id="sharing${rowCount}" required>
+                    <select name="sharing" required>
                         <option value="quad">Quad</option>
                         <option value="triple">Triple</option>
                         <option value="double">Double</option>
                     </select>
-                    <div class="error-message" id="error-sharing${rowCount}"></div>
                 </td>
                 <td><button onclick="removeRow(this)">Remove</button></td>
             `;
@@ -179,6 +163,7 @@
 
         function validateForm() {
             const rows = document.querySelectorAll("#dataTable tbody tr");
+            const mobileNumbers = new Set();
             let isValid = true;
 
             rows.forEach(row => {
@@ -186,15 +171,21 @@
                 inputs.forEach(input => {
                     if (!input.checkValidity()) {
                         input.classList.add("error");
-                        const errorDiv = document.getElementById(`error-${input.name}${input.id.charAt(input.id.length - 1)}`);
-                        errorDiv.textContent = input.validationMessage;
                         isValid = false;
                     } else {
                         input.classList.remove("error");
-                        const errorDiv = document.getElementById(`error-${input.name}${input.id.charAt(input.id.length - 1)}`);
-                        errorDiv.textContent = "";
                     }
                 });
+
+                // Check for duplicate mobile numbers
+                const mobileInput = row.querySelector('input[name="mobile"]');
+                if (mobileNumbers.has(mobileInput.value)) {
+                    mobileInput.classList.add("error");
+                    isValid = false;
+                } else {
+                    mobileNumbers.add(mobileInput.value);
+                    mobileInput.classList.remove("error");
+                }
             });
 
             return isValid;
@@ -202,32 +193,28 @@
 
         function submitData() {
             if (!validateForm()) {
-                return; // Prevent submission if form is invalid
+                alert("Please correct the highlighted errors and try again.");
+                return;
             }
 
-            // Gather data from all rows
             const rows = document.querySelectorAll("#dataTable tbody tr");
             const data = [];
             rows.forEach(row => {
                 const cells = row.querySelectorAll("td input, td select");
                 const rowData = {};
-                cells.forEach((cell, index) => {
+                cells.forEach(cell => {
                     rowData[cell.name] = cell.value;
                 });
                 data.push(rowData);
             });
 
-            // Format data into a message string
-            let message = "Travel Booking Details:\n";
+            let message = "Travel Booking Details:\nFields: Name, Gender, Age, Mobile No, Sharing Option\n\nEntries:\n";
             data.forEach(entry => {
-                message += `Name: ${entry.name}, Gender: ${entry.gender}, Age: ${entry.age}, Mobile: ${entry.mobile}, Sharing: ${entry.sharing}\n`;
+                message += `${entry.name}, ${entry.gender}, ${entry.age}, ${entry.mobile}, ${entry.sharing}\n`;
             });
 
-            // Encode message for URL
             const encodedMessage = encodeURIComponent(message);
-            
-            // Open WhatsApp with the pre-filled message
-            const whatsappURL = `https://wa.me/?text=${encodedMessage}`;
+            const whatsappURL = `https://wa.me/8989114821?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         }
     </script>
