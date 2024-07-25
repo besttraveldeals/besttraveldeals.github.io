@@ -193,7 +193,6 @@
             <img class="watermark" src="clogo.jpg" alt="Watermark">
         </div>
     </div>
-<script src="GSheet.js"></script>
     <script>
         function addRow() {
             const tableBody = document.querySelector("#dataTable tbody");
@@ -239,11 +238,48 @@
             row.parentNode.removeChild(row);
         }
 
-        document.getElementById('bookingForm').onsubmit = function() {
-            // Prevent multiple submissions
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Example function to submit form data to Google Sheets
+            submitFormToGoogleSheets();
+
+            // Disable submit button to prevent multiple submissions
             document.getElementById('submitBtn').disabled = true;
-            return true;
-        };
+        });
+
+        function submitFormToGoogleSheets() {
+            const formData = new FormData();
+            const tableRows = document.querySelectorAll("#dataTable tbody tr");
+
+            tableRows.forEach((row, index) => {
+                const inputs = row.querySelectorAll('input, select');
+                const rowData = {};
+                inputs.forEach(input => {
+                    rowData[input.name] = input.value;
+                });
+                formData.append(`row${index + 1}`, JSON.stringify(rowData));
+            });
+
+            fetch('https://script.google.com/macros/s/AKfycbzH9NZvaaYxF4c53m12u32MZIEzgEUXLMHXMjuYMdxwVVobumM_EL29OTuRZ6SixXl3/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Form submitted successfully:', data);
+                // Optionally, clear form or show success message
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                // Handle error scenario
+            });
+        }
     </script>
 </body>
 </html>
