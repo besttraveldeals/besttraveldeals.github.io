@@ -1,285 +1,497 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Best Travel Deals</title>
+
     <style>
+
         body {
+
             font-family: Arial, sans-serif;
+
             margin: 0;
+
             padding: 0;
+
             background-color: #f9f9f9;
+
             color: #333;
+
             width: 210mm; /* A4 width */
+
             height: 297mm; /* A4 height */
+
             overflow: hidden; /* Prevent overflow */
+
         }
+
         .page-container {
+
             width: 100%;
+
             height: 100%;
+
             padding: 20px; /* Padding for content */
+
             box-sizing: border-box;
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             justify-content: flex-start;
+
             position: relative;
+
         }
+
         .header {
+
             background-color: #4CAF50;
+
             color: white;
+
             padding: 10px 0;
+
             text-align: center;
+
             width: 100%;
+
             border-bottom: 2px solid #008CBA; /* Border line between header and form */
+
             box-sizing: border-box;
+
         }
+
         .header img {
+
             height: 60px; /* Decreased logo size for A4 */
+
             width: auto;
+
             margin-top: 10px; /* Adjusted margin */
+
         }
+
         .header h1, .header p {
+
             margin: 0;
+
             padding: 0;
+
         }
+
         .header p {
+
             font-size: 0.9em;
+
             margin-bottom: 5px; /* Adjusted margin */
+
         }
+
         .form-container {
+
             width: 100%;
+
             max-width: 800px;
+
             margin-top: 20px; /* Space between header and form */
+
             padding: 10px;
+
             box-sizing: border-box;
+
             border: 2px solid #ddd; /* Border around form */
+
             background-color: #fff;
+
             position: relative;
+
         }
+
         .form-container table {
+
             width: 100%;
+
             border-collapse: collapse;
+
             margin: 20px 0;
+
             background-color: #fff;
+
             color: #333;
+
             position: relative; /* Ensure table is within form-container */
+
             z-index: 1; /* Ensure table is above watermark */
+
         }
+
         th, td {
+
             border: 1px solid #ddd;
+
             padding: 8px;
+
             text-align: left;
+
             width: auto;
+
         }
+
         th {
+
             background-color: #008CBA;
+
             color: white;
+
         }
+
         td {
+
             background-color: #f1f1f1;
+
         }
+
         button {
+
             background-color: #4CAF50;
+
             color: white;
+
             padding: 10px 20px;
+
             border: none;
+
             border-radius: 4px;
+
             cursor: pointer;
+
             margin: 5px 0;
+
             display: inline-block;
+
         }
+
         button:hover {
+
             background-color: #45a049;
+
         }
+
         input[type="text"], input[type="number"], input[type="tel"], select {
+
             width: calc(100% - 16px); /* Adjusted width to accommodate padding */
+
             padding: 8px;
+
             box-sizing: border-box;
+
         }
+
         input[type="number"][name="age"] {
+
             width: 60px; /* Adjust width for age input */
+
         }
+
         .error {
+
             border-color: red;
+
         }
+
         .error-message {
+
             color: red;
+
             font-size: 0.9em;
+
             margin-top: 5px;
+
         }
+
         /* Watermark */
+
         .watermark {
+
             position: absolute;
+
             top: 50%; /* Centered vertically */
+
             left: 50%; /* Centered horizontally */
+
             transform: translate(-50%, -50%);
+
             opacity: 0.2; /* Initial opacity */
+
             pointer-events: none; /* Ensure watermark doesn't interfere with form inputs */
+
             max-width: 50%; /* Max width to prevent overlap */
+
             z-index: 0; /* Behind form elements */
+
         }
+
     </style>
+
 </head>
+
 <body>
+
     <div class="page-container">
+
         <div class="header">
+
             <img src="logo.jpg" alt="Best Travel Deals Logo">
+
             <h1>BEST TRAVEL DEALS</h1>
+
             <p>Be Tourist.....</p>
+
             <p>A Venture of Do Agnihotra Daily UDYAM-MP-10-0064623</p>
+
             <p>3rd Floor, 383|B|, Chirag Delhi, New Delhi-110017</p>
+
             <p>📞 8989114821 | 📧 <a href="mailto:besttraveld@gmail.com">besttraveld@gmail.com</a></p>
+
             <p>📸 <a href="https://www.instagram.com/besttraveld" target="_blank">@besttraveld</a> | 🌐 <a href="https://besttraveldeals.github.io" target="_blank">besttraveldeals.github.io</a></p>
+
         </div>
+
         <div class="form-container">
+
             <form method="post" action="https://script.google.com/macros/s/AKfycbzH9NZvaaYxF4c53m12u32MZIEzgEUXLMHXMjuYMdxwVVobumM_EL29OTuRZ6SixXl3/exec" name="bookingForm" id="bookingForm">
+
                 <table id="dataTable">
+
                     <thead>
+
                         <tr>
+
                             <th>Name</th>
+
                             <th>Gender</th>
+
                             <th>T-Shirt Size</th>
+
                             <th>Age</th>
+
                             <th>Mobile No</th>
+
                             <th>Sharing Option</th>
+
                             <th>Action</th>
+
                         </tr>
+
                     </thead>
+
                     <tbody>
+
                         <tr>
+
                             <td><input type="text" name="name" required></td>
+
                             <td>
+
                                 <select name="gender" required>
+
                                     <option value="">Select Gender</option>
+
                                     <option value="Male">Male</option>
+
                                     <option value="Female">Female</option>
+
                                     <option value="Transgender">Transgender</option>
+
                                 </select>
+
                             </td>
+
                             <td>
+
                                 <select name="tshirt_size" required>
+
                                     <option value="">Select T-Shirt Size</option>
+
                                     <option value="XS">XS</option>
+
                                     <option value="S">S</option>
+
                                     <option value="M">M</option>
+
                                     <option value="L">L</option>
+
                                     <option value="XL">XL</option>
+
                                     <option value="2XL">2XL</option>
+
                                 </select>
+
                             </td>
+
                             <td><input type="number" name="age"  min="13" max="48" required></td>
+
                             <td><input type="tel" name="mobile" pattern="[0-9]{10}" required></td>
+
                             <td>
+
                                 <select name="sharing" required>
+
                                     <option value="">Select Sharing Option</option>
+
                                     <option value="quad">Quad</option>
+
                                     <option value="triple">Triple</option>
+
                                     <option value="double">Double</option>
+
                                 </select>
+
                             </td>
+
                             <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+
                         </tr>
+
                     </tbody>
+
                 </table>
+
                 <button type="button" onclick="addRow()">Add Row</button>
+
                 <label>
+
                     <input type="checkbox" id="declarationCheckbox" required>
+
                     I declare that the information provided is accurate.
+
                 </label>
+
                 <input type="submit" id="submitBtn" value="Submit">
+
             </form>
+
             <img class="watermark" src="clogo.jpg" alt="Watermark">
+
         </div>
+
     </div>
+
+<script src="GSheet.js"></script>
+
     <script>
+
         function addRow() {
+
             const tableBody = document.querySelector("#dataTable tbody");
+
             const newRow = tableBody.insertRow();
 
+
+
             newRow.innerHTML = `
+
                 <td><input type="text" name="name" required></td>
+
                 <td>
+
                     <select name="gender" required>
+
                         <option value="">Select Gender</option>
+
                         <option value="Male">Male</option>
+
                         <option value="Female">Female</option>
+
                         <option value="Transgender">Transgender</option>
+
                     </select>
+
                 </td>
+
                 <td>
+
                     <select name="tshirt_size" required>
+
                         <option value="">Select T-Shirt Size</option>
+
                         <option value="XS">XS</option>
+
                         <option value="S">S</option>
+
                         <option value="M">M</option>
+
                         <option value="L">L</option>
+
                         <option value="XL">XL</option>
+
                         <option value="2XL">2XL</option>
+
                     </select>
+
                 </td>
+
                 <td><input type="number" name="age"  min="13" max="48" required></td>
+
                 <td><input type="tel" name="mobile" pattern="[0-9]{10}" required></td>
+
                 <td>
+
                     <select name="sharing" required>
+
                         <option value="">Select Sharing Option</option>
+
                         <option value="quad">Quad</option>
+
                         <option value="triple">Triple</option>
+
                         <option value="double">Double</option>
+
                     </select>
+
                 </td>
+
                 <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+
             `;
+
         }
+
+
 
         function removeRow(button) {
+
             const row = button.parentNode.parentNode;
+
             row.parentNode.removeChild(row);
+
         }
 
-        document.getElementById('bookingForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
 
-            // Example function to submit form data to Google Sheets
-            submitFormToGoogleSheets();
 
-            // Disable submit button to prevent multiple submissions
+        document.getElementById('bookingForm').onsubmit = function() {
+
+            // Prevent multiple submissions
+
             document.getElementById('submitBtn').disabled = true;
-        });
 
-        function submitFormToGoogleSheets() {
-            const formData = new FormData();
-            const tableRows = document.querySelectorAll("#dataTable tbody tr");
+            return true;
 
-            tableRows.forEach((row, index) => {
-                const inputs = row.querySelectorAll('input, select');
-                const rowData = {};
-                inputs.forEach(input => {
-                    rowData[input.name] = input.value;
-                });
-                formData.append(`row${index + 1}`, JSON.stringify(rowData));
-            });
+        };
 
-            fetch('https://script.google.com/macros/s/AKfycbzH9NZvaaYxF4c53m12u32MZIEzgEUXLMHXMjuYMdxwVVobumM_EL29OTuRZ6SixXl3/exec', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                console.log('Form submitted successfully:', data);
-                // Optionally, clear form or show success message
-            })
-            .catch(error => {
-                console.error('Error submitting form:', error);
-                // Handle error scenario
-            });
-        }
     </script>
+
 </body>
+
 </html>
