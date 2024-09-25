@@ -155,6 +155,24 @@
             Best Travel Deals | Contact us at: 8989114821
         </div>
     </div>
+  <button id="downloadButton">Download ID Card</button>
+
+  <script>
+    const downloadButton = document.getElementById("downloadButton");
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbxVZoPP6JSfmsuIIFGXnLwhECg3mNjFRCIrjSTfcH0umsyWGvhVtIAhpG6KeB7YO5vBdg/exec";
+
+    downloadButton.addEventListener("click", function() {
+      // Simulate a form submission to trigger the script
+      const form = document.createElement("form");
+      form.method = "POST"; 
+      form.action = scriptUrl;
+      form.target = "_blank"; 
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    });
+  </script>
 
     <script>
         $(document).ready(function() {
@@ -191,7 +209,7 @@
                 };
 
                 // Submit to Google Sheets via Google Apps Script (Assuming the script is deployed)
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbyfecp_zJu3VEy4VvjIWVnqjLD8g14j_6bvB0Ez78YtO-65H6HF9p5Gq9cZmlBDiCoh/exec'; // Replace with actual Google Apps Script URL
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxVZoPP6JSfmsuIIFGXnLwhECg3mNjFRCIrjSTfcH0umsyWGvhVtIAhpG6KeB7YO5vBdg/exec'; // Replace with actual Google Apps Script URL
                 $.post(scriptURL, formData)
                     .done(function(response) {
                         alert('Form submitted successfully!');
