@@ -155,24 +155,6 @@
             Best Travel Deals | Contact us at: 8989114821
         </div>
     </div>
-  <button id="downloadButton">Download ID Card</button>
-
-  <script>
-    const downloadButton = document.getElementById("downloadButton");
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbxVZoPP6JSfmsuIIFGXnLwhECg3mNjFRCIrjSTfcH0umsyWGvhVtIAhpG6KeB7YO5vBdg/exec";
-
-    downloadButton.addEventListener("click", function() {
-      // Simulate a form submission to trigger the script
-      const form = document.createElement("form");
-      form.method = "POST"; 
-      form.action = scriptUrl;
-      form.target = "_blank"; 
-
-      document.body.appendChild(form);
-      form.submit();
-      document.body.removeChild(form);
-    });
-  </script>
 
     <script>
         $(document).ready(function() {
