@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
             align-items: center;
             height: 100vh;
         }
+
         .form-container {
             background-color: #fff;
             border-radius: 10px;
@@ -26,16 +28,19 @@
             padding: 20px;
             margin: 20px;
         }
+
         .form-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 20px;
         }
+
         .form-header img {
             width: 80px;
             height: auto;
         }
+
         .form-header h1 {
             font-size: 22px;
             text-align: center;
@@ -43,15 +48,23 @@
             margin: 0 20px;
             color: #333;
         }
+
         form {
             display: flex;
             flex-direction: column;
         }
+
         label {
             margin-bottom: 5px;
             color: #555;
         }
-        select, input[type="email"], input[type="tel"], input[type="number"], input[type="checkbox"], button {
+
+        select,
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="checkbox"],
+        button {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -59,10 +72,12 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
         input[type="checkbox"] {
             width: auto;
             margin-right: 10px;
         }
+
         button {
             background-color: #28a745;
             color: white;
@@ -70,12 +85,15 @@
             border: none;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #218838;
         }
+
         .hidden {
             display: none;
         }
+
         .form-footer {
             text-align: center;
             margin-top: 20px;
@@ -84,6 +102,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="form-container">
         <div class="form-header">
@@ -105,33 +124,6 @@
             <label for="name" id="nameLabel" class="hidden">Select Name:</label>
             <select id="name" name="name" class="hidden">
                 <option value="">--Select Name--</option>
-                <option value="AJAY SHAKYA">AJAY SHAKYA</option>
-                <option value="AJAY SINGH MARAN">AJAY SINGH MARAN</option>
-                <option value="AKASH VISHVAKARNA">AKASH VISHVAKARNA</option>
-                <option value="AKSHARA SHARMA">AKSHARA SHARMA</option>
-                <option value="ANAMIKA NAGAR">ANAMIKA NAGAR</option>
-                <option value="ANKIT GOYAL">ANKIT GOYAL</option>
-                <option value="ANUJ KUSHRAM">ANUJ KUSHRAM</option>
-                <option value="ARJUN MEENA">ARJUN MEENA</option>
-                <option value="BHUMIKA MARAN">BHUMIKA MARAN</option>
-                <option value="BRAJMOHAN VISHWAKARMA">BRAJMOHAN VISHWAKARMA</option>
-                <option value="DEVCHAND AHIRWAR">DEVCHAND AHIRWAR</option>
-                <option value="GAURAV PARTE">GAURAV PARTE</option>
-                <option value="HITESH">HITESH</option>
-                <option value="JAYDEEP MALVIYA">JAYDEEP MALVIYA</option>
-                <option value="NAVNEET KAUR">NAVNEET KAUR</option>
-                <option value="POOJA MARAN">POOJA MARAN</option>
-                <option value="RAJAT DOHRE">RAJAT DOHRE</option>
-                <option value="SAKSHI SHARMA">SAKSHI SHARMA</option>
-                <option value="SANJAY KALESH">SANJAY KALESH</option>
-                <option value="SEEMA PARTE">SEEMA PARTE</option>
-                <option value="SIMRAN MARAN">SIMRAN MARAN</option>
-                <option value="SUHANI MARAN">SUHANI MARAN</option>
-                <option value="VIKAS HATELA">VIKAS HATELA</option>
-                <option value="YASHMIN ALI">YASHMIN ALI</option>
-                <option value="YOGESH DANGI">YOGESH DANGI</option>
-                <option value="AYUSHI RAO (2022)">AYUSHI RAO (2022)</option>
-                <option value="Gaurav Sahu AHDT">Gaurav Sahu AHDT</option>
             </select>
 
             <label for="email">Email:</label>
@@ -149,6 +141,9 @@
             </label>
 
             <button type="submit">Submit</button>
+            <button type="button" onclick="window.location.href='https://www.besttraveldeals.in/id-download.html'" style="background-color: #007bff; color: white; font-size: 18px; border: none; cursor: pointer;">
+    Download ID Card
+            </button>
         </form>
 
         <p id="referenceNumber" class="hidden">Your reference number: <strong id="refNum"></strong></p>
@@ -159,9 +154,30 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-            $('#category').change(function() {
-                if ($(this).val() === 'Attendee') {
+        $(document).ready(function () {
+            const attendeeNames = [
+                "ANUJ KUSHRAM", "AYUSHI RAO (2022)", "ANURAG MARAN (2022)"
+            ];
+
+            const delegateNames = [
+                "Mrs. Jyoti Makhija", "Aruna Tomar", "Mrs. Jyoti Singh", "Mrs. Pushpa Singh", "Mrs. Kavya Dubey", "Mrs. Upma Singh", "Mr. Subhash Kumar" , " Mr. Devendra Singh Tomar" , "Mr. Purushottam Kumar", "Mr. Vocational Tr., JNV BPL"
+            ];
+
+            $('#category').change(function () {
+                const selectedCategory = $(this).val();
+                $('#name').empty(); // Clear the previous options
+                $('#name').append('<option value="">--Select Name--</option>');
+
+                if (selectedCategory === 'Attendee') {
+                    attendeeNames.forEach(name => {
+                        $('#name').append(`<option value="${name}">${name}</option>`);
+                    });
+                    $('#name').removeClass('hidden');
+                    $('#nameLabel').removeClass('hidden');
+                } else if (selectedCategory === 'Delegate') {
+                    delegateNames.forEach(name => {
+                        $('#name').append(`<option value="${name}">${name}</option>`);
+                    });
                     $('#name').removeClass('hidden');
                     $('#nameLabel').removeClass('hidden');
                 } else {
@@ -170,17 +186,24 @@
                 }
             });
 
-            $('#eventForm').on('submit', function(event) {
+            $('#eventForm').on('submit', function (event) {
                 event.preventDefault();
-                
+
                 // Validate form
                 if (!$(this).valid()) {
                     return;
                 }
 
                 // Generate unique reference number
-                let refNumber = 'REF' + Math.floor(Math.random() * 1000000);
-
+                // Generate unique reference number based on category
+                let refNumber;
+                if ($('#category').val() === 'Delegate') {
+                    // For delegates, create a sequential four-digit ID starting with DEL
+                    refNumber = 'DEL' + ('000' + Math.floor(Math.random() * 10000)).slice(-4); // Generates DELXXXX (e.g., DEL0001, DEL1234)
+                } else {
+                    // For other categories, create a random six-digit ID starting with REF
+                    refNumber = 'REF' + Math.floor(Math.random() * 1000000);
+                }
                 // Prepare data
                 let formData = {
                     category: $('#category').val(),
@@ -195,7 +218,7 @@
                 // Submit to Google Sheets via Google Apps Script (Assuming the script is deployed)
                 const scriptURL = 'https://script.google.com/macros/s/AKfycbyfecp_zJu3VEy4VvjIWVnqjLD8g14j_6bvB0Ez78YtO-65H6HF9p5Gq9cZmlBDiCoh/exec'; // Replace with actual Google Apps Script URL
                 $.post(scriptURL, formData)
-                    .done(function(response) {
+                    .done(function (response) {
                         alert('Form submitted successfully!');
                         $('#refNum').text(refNumber);
                         $('#referenceNumber').removeClass('hidden');
@@ -203,11 +226,12 @@
                         $('#name').addClass('hidden');
                         $('#nameLabel').addClass('hidden');
                     })
-                    .fail(function(error) {
+                    .fail(function (error) {
                         alert('Error submitting form. Please try again later.');
                     });
             });
         });
     </script>
 </body>
+
 </html>
