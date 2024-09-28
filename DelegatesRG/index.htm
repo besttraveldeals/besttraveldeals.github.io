@@ -35,6 +35,20 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
+    .loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Ensure it's above other elements */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: add a white background with transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
         .form-header img {
             width: 80px;
@@ -94,6 +108,12 @@
             display: none;
         }
 
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .form-footer {
             text-align: center;
             margin-top: 20px;
@@ -142,7 +162,7 @@
 
             <button type="submit">Submit</button>
             <button type="button" onclick="window.location.href='https://www.besttraveldeals.in/id-download.html'" style="background-color: #007bff; color: white; font-size: 18px; border: none; cursor: pointer;">
-    Download ID Card "Attendees"
+                Download ID Card "Attendees"
             </button>
             <button type="button" onclick="window.location.href='https://sites.google.com/view/downloadidcards/id-download'" style="background-color: #018bff; color: white; font-size: 18px; border: none;">
                 Download ID Card "Delegates"
@@ -150,6 +170,11 @@
         </form>
 
         <p id="referenceNumber" class="hidden">Your reference number: <strong id="refNum"></strong></p>
+
+        <div class="loading">
+            <img src="https://media1.tenor.com/m/YmEQfi6kJpsAAAAC/mail-download.gif" alt="Submitting...">
+            <p>Submitting your form, please wait...</p>
+        </div>
 
         <div class="form-footer">
             Best Travel Deals | Contact us at: 8989114821
@@ -163,7 +188,7 @@
             ];
 
             const delegateNames = [
-                "Mrs. Jyoti Makhija", "Aruna Tomar", "Mrs. Jyoti Singh", "Mrs. Pushpa Singh", "Mrs. Kavya Dubey", "Mrs. Upma Singh", "Mr. Subhash Kumar" , " Mr. Devendra Singh Tomar" , "Mr. Purushottam Kumar", "Mr. Vocational Tr., JNV BPL"
+                "Mrs. Jyoti Makhija", "Aruna Tomar", "Mrs. Jyoti Singh", "Mrs. Pushpa Singh", "Mrs. Kavya Dubey", "Mrs. Upma Singh", "Mr. Subhash Kumar", "Mr. Devendra Singh Tomar", "Mr. Purushottam Kumar", "Mr. Vocational Tr., JNV BPL"
             ];
 
             $('#category').change(function () {
@@ -172,18 +197,17 @@
                 $('#name').append('<option value="">--Select Name--</option>');
 
                 if (selectedCategory === 'Attendee') {
-                    attendeeNames.forEach(name => {
-                        $('#name').append(`<option value="${name}">${name}</option>`);
-                    });
-                    $('#name').removeClass('hidden');
-                    $('#nameLabel').removeClass('hidden');
+                    alert('Registration for Attendees is closed. For more info, contact the admin at 8989114821.');
+                    $('#category').val('');
+                    $('#name').addClass('hidden');
+                    $('#nameLabel').addClass('hidden');
                 } else if (selectedCategory === 'Delegate') {
                     delegateNames.forEach(name => {
                         $('#name').append(`<option value="${name}">${name}</option>`);
                     });
                     $('#name').removeClass('hidden');
                     $('#nameLabel').removeClass('hidden');
-                } else {
+                } else if (selectedCategory === 'Speaker') {
                     $('#name').addClass('hidden');
                     $('#nameLabel').addClass('hidden');
                 }
@@ -192,22 +216,19 @@
             $('#eventForm').on('submit', function (event) {
                 event.preventDefault();
 
-                // Validate form
                 if (!$(this).valid()) {
                     return;
                 }
 
-                // Generate unique reference number
-                // Generate unique reference number based on category
+                $('.loading').show(); // Show the loading gif
+
                 let refNumber;
                 if ($('#category').val() === 'Delegate') {
-                    // For delegates, create a sequential four-digit ID starting with DEL
-                    refNumber = 'DEL' + ('000' + Math.floor(Math.random() * 10000)).slice(-4); // Generates DELXXXX (e.g., DEL0001, DEL1234)
+                    refNumber = 'DEL' + ('000' + Math.floor(Math.random() * 10000)).slice(-4); 
                 } else {
-                    // For other categories, create a random six-digit ID starting with REF
                     refNumber = 'REF' + Math.floor(Math.random() * 1000000);
                 }
-                // Prepare data
+
                 let formData = {
                     category: $('#category').val(),
                     name: $('#name').val(),
@@ -218,11 +239,11 @@
                     refNumber: refNumber
                 };
 
-                // Submit to Google Sheets via Google Apps Script (Assuming the script is deployed)
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbyfecp_zJu3VEy4VvjIWVnqjLD8g14j_6bvB0Ez78YtO-65H6HF9p5Gq9cZmlBDiCoh/exec'; // Replace with actual Google Apps Script URL
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbyfecp_zJu3VEy4VvjIWVnqjLD8g14j_6bvB0Ez78YtO-65H6HF9p5Gq9cZmlBDiCoh/exec';
                 $.post(scriptURL, formData)
                     .done(function (response) {
                         alert('Form submitted successfully!');
+                        $('.loading').hide(); // Hide the loading gif
                         $('#refNum').text(refNumber);
                         $('#referenceNumber').removeClass('hidden');
                         $('#eventForm')[0].reset();
@@ -231,6 +252,7 @@
                     })
                     .fail(function (error) {
                         alert('Error submitting form. Please try again later.');
+                        $('.loading').hide(); // Hide the loading gif on error
                     });
             });
         });
